@@ -5,6 +5,7 @@ function DropdownItem(props) {
     <a
       href="#demo"
       className="menu-item"
+      onClick={() => props.goToMenu && props.onClick(props.goToMenu)}
     >
       <span className="icon-button">{props.leftIcon}</span>
       {props.children}

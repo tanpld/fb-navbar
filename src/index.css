@@ -19,7 +19,7 @@ code {
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 600;
+  --speed: 500ms;
 }
 
  * {
@@ -84,6 +84,8 @@ a {
   height: 20px;
 }
 
+/* Dropdown */
+
 .dropdown {
   position: absolute;
   top: 58px;
@@ -97,6 +99,10 @@ a {
   transition: height var(--speed) ease;
 }
 
+.menu {
+  width: 100%;
+}
+
 .menu-item {
   height: 50px;
   display: flex;
@@ -106,10 +112,52 @@ a {
   transition: background var(--speed);
 }
 
+.menu-item .icon-button {
+  margin-right: 0.5rem;
+}
+
+.menu-item .icon-button:hover {
+  filter: none;
+}
+
 .menu-item:hover {
   background: #525357;
 }
 
 .icon-right {
   margin-left: auto;
+}
+
+/* CSSTransition classes  */
+.menu-primary.enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+.menu-primary.enter.enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+
+.menu-primary.exit {
+  position: absolute;
+}
+
+.menu-primary.exit.exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+.menu-secondary.enter {
+  transform: translateX(110%);
+}
+
+.menu-secondary.enter.enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+
+.menu-secondary.exit.exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
 }
